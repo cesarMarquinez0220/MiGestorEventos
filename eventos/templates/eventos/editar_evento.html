@@ -1,16 +1,16 @@
-<!-- eventos/templates/eventos/crear_evento.html -->
+<!-- eventos/templates/eventos/editar_evento.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Evento</title>
+    <title>Editar Evento</title>
 </head>
 <body>
-    <h1>Crear Evento</h1>
+    <h1>Editar Evento</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Guardar</button>
+        <button type="submit">Guardar cambios</button>
     </form>
     <a href="{% url 'lista_eventos' %}">Volver a la lista de eventos</a>
 </body>

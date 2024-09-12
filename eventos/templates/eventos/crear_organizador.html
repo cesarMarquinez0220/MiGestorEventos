@@ -1,17 +1,17 @@
-<!-- eventos/templates/eventos/crear_evento.html -->
+<!-- eventos/templates/eventos/crear_organizador.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Evento</title>
+    <title>Crear Organizador</title>
 </head>
 <body>
-    <h1>Crear Evento</h1>
+    <h1>Crear Organizador</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
-    <a href="{% url 'lista_eventos' %}">Volver a la lista de eventos</a>
+    <a href="{% url 'lista_organizadores' %}">Volver a la lista de organizadores</a>
 </body>
 </html>

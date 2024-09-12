@@ -1,6 +1,6 @@
 # eventos/forms.py
 from django import forms
-from .models import Evento
+from .models import Evento, Organizador
 
 class EventoForm(forms.ModelForm):
     class Meta:
@@ -12,3 +12,8 @@ class EventoForm(forms.ModelForm):
         if 'Cancelado' in nombre:
             raise forms.ValidationError("El nombre del evento no puede contener la palabra 'Cancelado'.")
         return nombre
+    
+class OrganizadorForm(forms.ModelForm):
+    class Meta:
+        model = Organizador
+        fields = ['nombre', 'email']

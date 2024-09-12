@@ -1,0 +1,36 @@
+<!-- eventos/templates/eventos/lista_organizadores.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Organizadores</title>
+</head>
+<body>
+    <h1>Lista de Organizadores</h1>
+    <a href="{% url 'crear_organizador' %}">Crear Nuevo Organizador</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for organizador in organizadores %}
+            <tr>
+                <td>{{ organizador.nombre }}</td>
+                <td>{{ organizador.email }}</td>
+                <td>
+                    <!-- Aquí puedes agregar enlaces para editar o eliminar si lo deseas -->
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No hay organizadores disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

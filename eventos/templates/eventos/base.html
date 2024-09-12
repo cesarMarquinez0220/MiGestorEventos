@@ -1,0 +1,28 @@
+<!-- eventos/templates/eventos/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}MiGestorEventos{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>MiGestorEventos</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'lista_eventos' %}">Eventos</a></li>
+                <li><a href="{% url 'lista_organizadores' %}">Organizadores</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 MiGestorEventos</p>
+    </footer>
+</body>
+</html>

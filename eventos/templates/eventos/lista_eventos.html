@@ -6,26 +6,31 @@
     <title>Lista de Eventos</title>
 </head>
 <body>
-    <h1>Eventos</h1>
+    <h1>Lista de Eventos</h1>
+    <a href="{% url 'crear_evento' %}">Crear Nuevo Evento</a>
     <table>
         <thead>
             <tr>
-                <th>Nombre del Evento</th>
+                <th>Nombre</th>
                 <th>Fecha</th>
                 <th>Organizador</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             {% for evento in eventos %}
-                <tr>
-                    <td>{{ evento.nombre }}</td>
-                    <td>{{ evento.fecha }}</td>
-                    <td>{{ evento.organizador.nombre }}</td>
-                </tr>
+            <tr>
+                <td>{{ evento.nombre }}</td>
+                <td>{{ evento.fecha }}</td>
+                <td>{{ evento.organizador.nombre }}</td>
+                <td>
+                    <a href="{% url 'editar_evento' evento.pk %}">Editar</a>
+                </td>
+            </tr>
             {% empty %}
-                <tr>
-                    <td colspan="3">No hay eventos disponibles.</td>
-                </tr>
+            <tr>
+                <td colspan="4">No hay eventos disponibles.</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
